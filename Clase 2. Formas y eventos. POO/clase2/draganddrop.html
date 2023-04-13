@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drag and Drop en Canvas HTML</title>
+</head>
+
+<body>
+    <!-- Crear el canvas -->
+    <canvas id="myCanvas" width="800" height="800"></canvas>
+
+    <script>
+        // Obtener el canvas y su contexto
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Crear un rectángulo para arrastrar
+        /*
+            Esta estructura se llama objeto literal. Un objeto literal es una colección de pares clave-valor, 
+            donde la clave es una cadena (también llamada propiedad) y el valor puede ser cualquier tipo de 
+            dato válido de JavaScript, incluyendo otros objetos.
+        */
+        let rect = { x: 50, y: 50, width: 100, height: 100 };
+
+        // Agregar event listener para el mouse down en el canvas
+        canvas.addEventListener('mousedown', function (e) {
+            // Verificar si se hizo clic dentro del rectángulo
+            if (e.offsetX >= rect.x && e.offsetX <= rect.x + rect.width &&
+                e.offsetY >= rect.y && e.offsetY <= rect.y + rect.height) {
+                // Agregar event listener para el mouse move en el canvas
+                canvas.addEventListener('mousemove', dragRect);
+            }
+        });
+
+        // Agregar event listener para el mouse up en el canvas
+        canvas.addEventListener('mouseup', function (e) {
+            // Eliminar el event listener para el mouse move
+            canvas.removeEventListener('mousemove', dragRect);
+        });
+
+        // Función para arrastrar el rectángulo
+        function dragRect(e) {
+            // Limpiar el canvas antes de dibujar el rectángulo
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Actualizar la posición del rectángulo
+            rect.x = e.offsetX;
+            rect.y = e.offsetY;
+
+            // Dibujar el rectángulo en su nueva posición
+            ctx.fillStyle = '#FF0000';
+            ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+        }
+
+        // Dibujar el rectángulo en su posición inicial
+        ctx.fillStyle = '#FF0000';
+        ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+    </script>
+</body>
+
+</html>
