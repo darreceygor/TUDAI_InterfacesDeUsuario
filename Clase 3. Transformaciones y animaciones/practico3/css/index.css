@@ -1,0 +1,143 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style:none;
+  background-image: url("../img/213.jpg");
+  color:white;
+}
+
+
+/********************************************************/
+/*** JS**************************************************/
+/********************************************************/
+
+.container {
+  margin: 100px 0px 0px 200px ;
+}
+
+.reloj {
+  width: 350px;
+  height: 350px;
+}
+
+circle {
+  fill: rgb(255, 255, 255);
+}
+
+.hora,
+.minuto,
+.segundo {
+  transform-origin: center;
+  stroke-linecap: round;
+  stroke-width: 1px;
+  stroke: black;
+}
+.hora {
+  transition: transform 1s ease-in-out;
+}
+.minuto {
+  transition: transform 1s ease-in-out;
+}
+.segundo {
+  stroke: rgb(185, 5, 5);
+}
+
+li.guion {
+  margin:50px 0px 0px 50px;
+  font-size: medium;
+  position: absolute;
+  color:rgb(0, 0, 0);
+  z-index: 5;
+}
+
+/*12*/  li.guion:nth-child(13) {   transform:translate(110px, -400px); font-size: xx-large;}
+/*1*/   li.guion:nth-child(2) {    transform:translate(200px, -370px);  }
+/*2*/   li.guion:nth-child(3) {    transform:translate(260px, -320px);  }
+/*3*/   li.guion:nth-child(4) {    transform:translate(280px, -240px); font-size: xx-large; }
+/*4*/   li.guion:nth-child(5) {    transform:translate(260px, -160px); }
+/*5*/   li.guion:nth-child(6) {    transform:translate(200px, -100px); }
+
+/*6*/   li.guion:nth-child(7) {    transform:translate(110px, -90px); font-size: xx-large;}
+/*7*/   li.guion:nth-child(8) {    transform:translate(35px, -110px);  }
+/*8*/   li.guion:nth-child(9) {    transform:translate(-15px, -170px);  }
+/*9*/   li.guion:nth-child(10) {   transform:translate(-40px, -250px); font-size: xx-large; }
+/*10*/  li.guion:nth-child(11) {   transform:translate(-15px, -320px); }
+/*11*/  li.guion:nth-child(12) {   transform:translate(35px, -370px); }
+
+
+/********************************************************/
+/*** CSS ************************************************/
+/********************************************************/
+
+
+.container2 {
+  position: absolute;
+  margin: 100px 0px 0px 200px;
+}
+
+
+.relojCSS {
+  z-index: 2;
+  width: 350px;
+  height:350px;
+  border-radius: 50%;
+  background-color:rgb(255, 255, 255);
+}
+
+.horaCSS,
+.minutoCSS,
+.segundoCSS {
+    position: absolute;
+    background: rgb(243, 7, 7);
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+
+.horaCSS {
+  width: 1.8%;
+  height: 25%;
+  top: 25%;
+  left: 48.85%;
+  opacity: 0.8;
+  left: 0;
+  right: 0;
+  margin: 0px 0px 0px 175px;
+  /*animation: time 60s infinite linear;*/
+  animation: time 86400s infinite linear;
+}
+
+.minutoCSS {
+  width: 1.6%;
+  height: 30%;
+  top: 19%;
+  left: 48.9%;
+  opacity: 0.8;
+  left: 0;
+  right: 0;
+  margin: 0px 0px 0px 175px;
+  /*animation: time 60s infinite linear;*/
+  animation: time 3600s infinite linear;
+}
+
+.segundoCSS {
+  width: 2px;
+  height: 40%;
+  top: 9%;
+  left: 49.25%;
+  opacity: 0.8;
+  background-color: black;
+
+  left: 0;
+  right: 0;
+  margin: 0px 0px 0px 175px;
+  /*animation: time 60s infinite linear;*/
+  animation: time 60s infinite linear;
+
+}
+
+@keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }

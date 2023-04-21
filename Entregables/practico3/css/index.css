@@ -1,0 +1,119 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style:none;
+  background-image: url("../img/213.jpg");
+
+}
+
+div:first-child {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient(blue, pink);
+  
+
+}
+
+li {
+  position: relative;
+  margin: 50px;
+  color:white;
+}
+
+li:nth-child(4){
+  font-style: italic;
+}
+
+li:nth-child(5){
+  font-weight: bold;
+
+}
+
+li:hover:nth-child(5){
+  font-size:50px;
+  
+}
+
+div#abs {
+  margin: 25px;
+  width: 150px;
+  height: 50px;
+  background-color: red;
+}
+
+div#rel {
+  margin: 25px;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(0, 255, 76);
+
+}
+
+div#rel:active {
+  background-color: yellow;
+  
+}
+
+/************************************/
+
+.reloj {
+  margin: 0px auto;
+  width: 350px;
+  height: 350px;
+}
+
+circle {
+  fill: black;
+}
+
+.hours,
+.minutes,
+.seconds {
+  transform-origin: center;
+  stroke-linecap: round;
+  stroke-width: 2px;
+}
+.hours {
+  stroke: rgb(126, 148, 211);
+  stroke-width: 2px;
+  transition: transform 1s ease-in-out;
+}
+.minutes {
+  stroke: lime;
+  stroke-width: 3px;
+  transition: transform 1s ease-in-out;
+}
+.seconds {
+  stroke: red;
+}
+
+.line {
+  stroke-width: 1px;
+  stroke: white;
+  stroke-linecap: round;
+  transform-origin: center;
+}
+
+li.guion {
+  font-size: medium;
+  position: absolute;
+  color:red;
+  z-index: 5;
+}
+
+/*12*/  li.guion:nth-child(13) {   transform:translate(110px, -390px); font-size: xx-large;}
+/*1*/   li.guion:nth-child(2) {    transform:translate(200px, -370px);  }
+/*2*/   li.guion:nth-child(3) {    transform:translate(260px, -320px);  }
+/*3*/   li.guion:nth-child(4) {    transform:translate(280px, -240px); font-size: xx-large; }
+/*4*/   li.guion:nth-child(5) {    transform:translate(260px, -160px); }
+/*5*/   li.guion:nth-child(6) {    transform:translate(200px, -100px); }
+
+/*6*/   li.guion:nth-child(7) {    transform:translate(110px, -90px); font-size: xx-large;}
+/*7*/   li.guion:nth-child(8) {    transform:translate(35px, -110px);  }
+/*8*/   li.guion:nth-child(9) {    transform:translate(-15px, -170px);  }
+/*9*/   li.guion:nth-child(10) {   transform:translate(-40px, -250px); font-size: xx-large; }
+/*10*/  li.guion:nth-child(11) {   transform:translate(-15px, -320px); }
+/*11*/  li.guion:nth-child(12) {   transform:translate(35px, -370px); }
