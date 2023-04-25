@@ -67,7 +67,7 @@ li.guion {
 
 
 /********************************************************/
-/*** CSS ************************************************/
+/*** RELOJ CON  CSS *************************************/
 /********************************************************/
 
 
@@ -83,6 +83,7 @@ li.guion {
   height:350px;
   border-radius: 50%;
   background-color:rgb(255, 255, 255);
+  
 }
 
 .horaCSS,
@@ -141,3 +142,46 @@ li.guion {
       transform: rotate(360deg);
     }
   }
+
+/********************************************************/
+/*** CARD CON HOVER *************************************/
+/********************************************************/
+
+h2:nth-child(5) {
+  position:absolute;
+  margin-top: 500px;
+}
+
+.container3 {
+  position: absolute;
+  margin: 500px 0px 0px 200px;
+  padding: 0px 0px 150px 0px;
+}
+
+.card {
+  font-weight: bold;
+  padding: 1em;
+  text-align: right;
+  color: #181a1a;
+
+  width:  300px;
+  height: 400px;
+  box-shadow: 0 1px 5px #00000099;
+
+  background-image: url("../img/Nicol_Bolas_Planeswalker.jpg");
+  background-size: cover;
+
+  position:relative;
+
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+  }
+  
+  .card:hover {
+    transition-duration: 150ms;
+    box-shadow: 0 5px 20px 5px #00000044;
+  }
+
+
