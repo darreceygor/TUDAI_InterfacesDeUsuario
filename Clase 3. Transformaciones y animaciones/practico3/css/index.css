@@ -7,6 +7,16 @@ body {
   color:white;
 }
 
+/********************************************************/
+/*** SPINNER      ***************************************/
+/********************************************************/
+
+.spinner {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+}
+
 
 /********************************************************/
 /*** JS**************************************************/
@@ -143,18 +153,65 @@ li.guion {
     }
   }
 
-/********************************************************/
-/*** CARD CON HOVER *************************************/
-/********************************************************/
+/***************************************************/
+/* 5. Generar una animación por cuadros “keyframe” */
+/* a partir de una tira de imágenes sprite sheet.  */
+/***************************************************/
 
-h2:nth-child(5) {
+div>h2 {
   position:absolute;
   margin-top: 500px;
 }
 
+
+.fondo {
+  position:absolute;
+  margin: 550px 0px 0px 100px;
+  width: 550px;
+  height: 350px;
+  background-color: white;
+  background-image: url("../img/fondo.avif");
+  background-size: cover;
+  animation:fondoA 10s linear infinite;
+
+}
+
+#pers {
+  margin: 180px auto ;
+  width:112px;
+  height:156px;
+ /* background:red;   /* Temporal, sólo para guiarnos */
+  background: url("../img/walk.png") repeat-x;
+
+  animation:walk 1s steps(6) infinite;
+}
+
+@keyframes fondoA {
+  0% { background-position:0 }
+  100% { background-position:-672px }
+}
+
+@keyframes walk {
+  0% { background-position:0 }
+  100% { background-position:-672px }
+}
+
+
+
+
+/********************************************************/
+/*** CARD CON HOVER *************************************/
+/********************************************************/
+
+
+h2:nth-child(8) {
+  position:absolute;
+  margin-top: 950px;
+}
+
 .container3 {
   position: absolute;
-  margin: 500px 0px 0px 200px;
+  margin: 1050px 0px 0px 200px;
   padding: 0px 0px 150px 0px;
 }
 

@@ -1,7 +1,7 @@
 (function () {
-  calculateHourDegrees();
-  calculateMinuteDegrees();
-  calculateSeconds();
+  horas();
+  minutos();
+  segundos();
 })();
 
 function linearMap(value, min, max, newMin, newMax) {
@@ -9,38 +9,67 @@ function linearMap(value, min, max, newMin, newMax) {
 }
 
 
-function calculateHourDegrees() {
+function horas() {
   const currentHour = new Date().getHours() - 12;
   const angle = linearMap(currentHour, 0, 12, 0, 360);
-  document.querySelector(".hours").style.transform = `rotate(${angle}deg)`;
+  document.querySelector(".hora").style.transform = `rotate(${angle}deg)`;
+
 }
 
-function calculateMinuteDegrees() {
+function minutos() {
   const currentMinutes = new Date().getMinutes();
   const angle = linearMap(currentMinutes, 0, 60, 0, 360);
-  document.querySelector(".minutes").style.transform = `rotate(${angle}deg)`;
+  document.querySelector(".minuto").style.transform = `rotate(${angle}deg)`;
 }
 
-function calculateSeconds() {
+function segundos() {
   const currentMinutes = new Date().getSeconds();
   const angle = linearMap(currentMinutes, 0, 60, 0, 360);
-  document.querySelector(".seconds").style.transform = `rotate(${angle}deg)`;
+  document.querySelector(".segundo").style.transform = `rotate(${angle}deg)`;
 }
 
 (function () {
   setInterval(() => {
-    calculateHourDegrees();
-    calculateMinuteDegrees();
-    calculateSeconds();
+    horas();
+    minutos();
+    segundos();
   }, 1000);
 })();
 
-function calculateLines() {
-  const lines = document.querySelectorAll(".line");
-  const numberLines = lines.length;
-  for (let i = 0; i < numberLines; i++) {
-    const line = lines[i];
-    const angle = linearMap(i, 0, numberLines, 0, 360);
-    line.style.transform = `rotate(${angle}deg)`;
+
+const $card = document.querySelector('.card');
+let bounds;
+
+function rotateToMouse(e) {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  const leftX = mouseX - bounds.x;
+  const topY = mouseY - bounds.y;
+  const center = {
+    x: leftX - bounds.width / 2,
+    y: topY - bounds.height / 2,
   }
+  const distance = Math.sqrt(center.x**2 + center.y**2);  /*distancia entre el centro y el mouse*/
+  
+  $card.style.transform = `
+    scale3d(1.1, 1.1, 1.1)
+    rotate3d(
+      ${center.y / 100},
+      ${-center.x / 100},
+      0,
+      ${Math.log(distance)* 8}deg
+    )
+  `;
 }
+
+$card.addEventListener('mouseenter', () => {
+  bounds = $card.getBoundingClientRect();
+  document.addEventListener('mousemove', rotateToMouse);
+});
+
+$card.addEventListener('mouseleave', () => {
+  document.removeEventListener('mousemove', rotateToMouse);
+  $card.style.transform = '';
+  $card.style.background = '';
+});

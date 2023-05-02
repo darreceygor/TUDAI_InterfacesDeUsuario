@@ -4,107 +4,54 @@ body {
   text-decoration: none;
   list-style:none;
   background-image: url("../img/213.jpg");
-
-}
-
-div:first-child {
-  width: 150px;
-  height: 50px;
-  text-align: center;
-  justify-content: center;
-  background: linear-gradient(blue, pink);
-  
-
-}
-
-li {
-  position: relative;
-  margin: 50px;
   color:white;
 }
 
-li:nth-child(4){
-  font-style: italic;
+
+/********************************************************/
+/*** JS**************************************************/
+/********************************************************/
+
+.container {
+  margin: 100px 0px 0px 200px ;
 }
-
-li:nth-child(5){
-  font-weight: bold;
-
-}
-
-li:hover:nth-child(5){
-  font-size:50px;
-  
-}
-
-div#abs {
-  margin: 25px;
-  width: 150px;
-  height: 50px;
-  background-color: red;
-}
-
-div#rel {
-  margin: 25px;
-  width: 150px;
-  height: 50px;
-  background-color: rgb(0, 255, 76);
-
-}
-
-div#rel:active {
-  background-color: yellow;
-  
-}
-
-/************************************/
 
 .reloj {
-  margin: 0px auto;
   width: 350px;
   height: 350px;
 }
 
 circle {
-  fill: black;
+  fill: rgb(255, 255, 255);
 }
 
-.hours,
-.minutes,
-.seconds {
+.hora,
+.minuto,
+.segundo {
   transform-origin: center;
   stroke-linecap: round;
-  stroke-width: 2px;
-}
-.hours {
-  stroke: rgb(126, 148, 211);
-  stroke-width: 2px;
-  transition: transform 1s ease-in-out;
-}
-.minutes {
-  stroke: lime;
-  stroke-width: 3px;
-  transition: transform 1s ease-in-out;
-}
-.seconds {
-  stroke: red;
-}
-
-.line {
   stroke-width: 1px;
-  stroke: white;
-  stroke-linecap: round;
-  transform-origin: center;
+  stroke: black;
+}
+.hora {
+  transition: transform 1s ease-in-out;
+}
+.minuto {
+  transition: transform 1s ease-in-out;
+}
+.segundo {
+  stroke: rgb(185, 5, 5);
 }
 
 li.guion {
+  margin:50px 0px 0px 50px;
   font-size: medium;
   position: absolute;
-  color:red;
+  color:rgb(0, 0, 0);
   z-index: 5;
 }
 
-/*12*/  li.guion:nth-child(13) {   transform:translate(110px, -390px); font-size: xx-large;}
+/*12*/  li.guion:nth-child(13) {   transform:translate(110px, -400px); font-size: xx-large;}
 /*1*/   li.guion:nth-child(2) {    transform:translate(200px, -370px);  }
 /*2*/   li.guion:nth-child(3) {    transform:translate(260px, -320px);  }
 /*3*/   li.guion:nth-child(4) {    transform:translate(280px, -240px); font-size: xx-large; }
@@ -117,3 +64,124 @@ li.guion {
 /*9*/   li.guion:nth-child(10) {   transform:translate(-40px, -250px); font-size: xx-large; }
 /*10*/  li.guion:nth-child(11) {   transform:translate(-15px, -320px); }
 /*11*/  li.guion:nth-child(12) {   transform:translate(35px, -370px); }
+
+
+/********************************************************/
+/*** RELOJ CON  CSS *************************************/
+/********************************************************/
+
+
+.container2 {
+  position: absolute;
+  margin: 100px 0px 0px 200px;
+}
+
+
+.relojCSS {
+  z-index: 2;
+  width: 350px;
+  height:350px;
+  border-radius: 50%;
+  background-color:rgb(255, 255, 255);
+  
+}
+
+.horaCSS,
+.minutoCSS,
+.segundoCSS {
+    position: absolute;
+    background: rgb(243, 7, 7);
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+
+.horaCSS {
+  width: 1.8%;
+  height: 25%;
+  top: 25%;
+  left: 48.85%;
+  opacity: 0.8;
+  left: 0;
+  right: 0;
+  margin: 0px 0px 0px 175px;
+  /*animation: time 60s infinite linear;*/
+  animation: time 86400s infinite linear;
+}
+
+.minutoCSS {
+  width: 1.6%;
+  height: 30%;
+  top: 19%;
+  left: 48.9%;
+  opacity: 0.8;
+  left: 0;
+  right: 0;
+  margin: 0px 0px 0px 175px;
+  /*animation: time 60s infinite linear;*/
+  animation: time 3600s infinite linear;
+}
+
+.segundoCSS {
+  width: 2px;
+  height: 40%;
+  top: 9%;
+  left: 49.25%;
+  opacity: 0.8;
+  background-color: black;
+
+  left: 0;
+  right: 0;
+  margin: 0px 0px 0px 175px;
+  /*animation: time 60s infinite linear;*/
+  animation: time 60s infinite linear;
+
+}
+
+@keyframes time {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+/********************************************************/
+/*** CARD CON HOVER *************************************/
+/********************************************************/
+
+h2:nth-child(7) {
+  position:absolute;
+  margin-top: 500px;
+}
+
+.container3 {
+  position: absolute;
+  margin: 600px 0px 0px 200px;
+  padding: 0px 0px 150px 0px;
+}
+
+.card {
+  font-weight: bold;
+  padding: 1em;
+  text-align: right;
+  color: #181a1a;
+
+  width:  300px;
+  height: 400px;
+  box-shadow: 0 1px 5px #00000099;
+
+  background-image: url("../img/Nicol_Bolas_Planeswalker.jpg");
+  background-size: cover;
+
+  position:relative;
+
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+  }
+  
+  .card:hover {
+    transition-duration: 150ms;
+    box-shadow: 0 5px 20px 5px #00000044;
+  }
+
+
