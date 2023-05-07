@@ -66,12 +66,32 @@ canvas.addEventListener('mousemove', (e)=>{
 // MENU SUPERIOR
 //--------------------------------------
 
+//INPUT para seleccionar ancho de lapiz y pincel
+let pb = d.querySelector('#inputPB');
+let wth = pb.value;
+
+pb.addEventListener("change", ()=> {
+  wth=d.getElementById('pb').innerHTML=document.getElementById('inputPB').value;
+  wth;
+  console.log(wth);
+})
+
+//INPUT para seleccionar color de lapiz y pincel
+let inClr = d.getElementById('inputColor');
+let selectedColor = inClr.value;
+
+inClr.addEventListener("input", ()=>{
+  selectedColor = inClr.value;
+})
+
+//LAPIZ
 d.getElementById("pen").addEventListener("click", (e)=>{
   penClick=true;
-  penWidth=5;
-  color='black';
-
+  penWidth=wth;
+  color= selectedColor;
+  d.body.style.cursor='.iconPen';
 })
+
 
 d.getElementById("eraser").addEventListener("click", (e)=>{
   penClick=true;
@@ -107,6 +127,9 @@ d.getElementById("clear").addEventListener("click", (e)=> {
 //--------------------------------------
 // FILTROS
 //--------------------------------------
+//-------------------------------------------
+// NEGATIVO
+//-------------------------------------------
 
 d.getElementById("negativo").addEventListener("click",(e)=>{
 
@@ -121,6 +144,10 @@ d.getElementById("negativo").addEventListener("click",(e)=>{
   ctx.putImageData(filtro.getImageData(), 0, 0);
   
 });
+
+//-------------------------------------------
+// SEPIA
+//-------------------------------------------
 
 d.getElementById("sepia").addEventListener("click",(e)=>{
 
@@ -137,6 +164,11 @@ d.getElementById("sepia").addEventListener("click",(e)=>{
   ctx.putImageData(filtro.getImageData(), 0, 0);
   
 });
+
+
+//-------------------------------------------
+// BINARIZACION
+//-------------------------------------------
 
 let lastSelected = null;
 let int = d.querySelector("#inputBinary");
@@ -164,6 +196,9 @@ d.getElementById("binary").addEventListener("click", (e) => {
 
 })
 
+//-------------------------------------------
+// SATURACION
+//-------------------------------------------
 
 d.getElementById("saturation").addEventListener("click", (e)=>{
   lastSelected=Saturacion;
@@ -178,14 +213,59 @@ d.getElementById("saturation").addEventListener("click", (e)=>{
   ctx.putImageData(filtro.getImageData(), 0, 0);
 })
 
-if (lastSelected===Binarizacion) {
-  d.getElementById("pBinary").style.visibility = "visible"; 
-} else {
-  bin ="hidden";
-}
+//-------------------------------------------
+// CONTRASTE
+//-------------------------------------------
 
+let cntr = d.querySelector("#inputContrast");
+let contraste = cntr.value;
 
+cntr.addEventListener("input", () => {
+  contraste=d.getElementById('cntrt').innerHTML=document.getElementById('inputContrast').value;
+  contraste;
+})
 
+d.getElementById("contrast").addEventListener("click", (e)=>{
+  lastSelected=Contraste;
+
+  let imageData = ctx.getImageData(0, 0,canvasWidth, canvasHeight);
+  
+  if (imageData == null)
+    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  ctx.putImageData(imageData, 0, 0);
+  let filtro = new Contraste(canvas.width, canvas.height, ctx, contraste);
+  ctx.putImageData(filtro.getImageData(), 0, 0);
+})
+
+//-------------------------------------------
+// BRILLO
+//-------------------------------------------
+
+let br = d.querySelector("#inputBright");
+let brillo = br.value;
+
+br.addEventListener("change", ()=> {
+  brillo=d.getElementById('brgh').innerHTML=document.getElementById('inputBright').value;
+  brillo;
+console.log(brillo);
+})
+
+d.getElementById("brightness").addEventListener("click", (e) => {
+
+  lastSelected=Binarizacion;
+  
+  let imageData = ctx.getImageData(0, 0,canvasWidth, canvasHeight);
+
+  if (imageData==null){
+    imageData = ctx.getImageData(0,0,canvasWidth,canvasHeight);
+  }
+  console.log(brillo);
+  ctx.putImageData(imageData, 0, 0);
+  let filtro = new Brillo(canvas.width, canvas.height, ctx, brillo);
+  ctx.putImageData(filtro.getImageData(), 0, 0);
+
+})
 
 //--------------------------------------
 // Entrada 

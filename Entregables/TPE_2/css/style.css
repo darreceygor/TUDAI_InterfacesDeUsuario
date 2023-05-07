@@ -8,11 +8,12 @@ body {
 ul {
   list-style: none;
 }
+
 .container {
   width: 1024px;
   height: 800px;
   background-color:#424949  ;
-  padding: 100px 0px 0px 150px;
+  padding: 150px 0px 0px 250px;
 
 }
 
@@ -23,7 +24,7 @@ ul {
 
 .menu {
   position: absolute;
-  margin: -840px auto;
+  margin: -880px 0px 0px -100px;
   border: 1px solid black;
   border-radius: 15px;
   color: white;
@@ -61,11 +62,11 @@ ul {
 }
 
 .filtros{
-  margin: -750px 0px 0px -120px;
+  margin: -750px 0px 0px -200px;
 }
 
 .formas{
-  margin: -300px 0px 0px -120px;
+  margin: 500px 0px 0px 0px;
 }
 
 .formas > h3,
@@ -75,11 +76,6 @@ ul {
 
 .canvas {
   border-radius: 25px;
-}
-
-
-#pBinary {
-  visibility: hidden;
 }
 
 
@@ -159,7 +155,7 @@ FILTROS
 
 #shadows {  background-image: url("../ico/shadow.jpg");}
 
-#highlights { background-image: url("../ico/highlights.jpg");}
+#contrast { background-image: url("../ico/highlights.jpg");}
 
 #warmth { background-image: url("../ico/warmth.jpg");}
 
@@ -175,6 +171,6 @@ FORMAS
 #triangle { background-image: url("../ico/formTriangle.png");}
 
 
-
+.iconPen { cursor: URL("../ico/supPen.png");}
 
 
