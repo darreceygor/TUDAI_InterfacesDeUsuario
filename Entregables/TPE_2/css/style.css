@@ -4,66 +4,177 @@ body {
   text-decoration: none;
 }
 
-button {
-  width: 50px;
-  height: 50px;
-  background-color: rgb(138, 85, 85);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+ul {
+  list-style: none;
 }
-
-#pen {
-  background-image: url("../ico/pen.png");
-
-}
-
-#eraser {
-  background-image: url("../ico/eraser.png");
+.container {
+  width: 1024px;
+  height: 800px;
+  background-color:#424949  ;
+  padding: 100px 0px 0px 150px;
 
 }
 
-#save {
-  background-image: url("../ico/save.png");
+/*------------------------
+    MENU SUPERIOR
+--------------------------*/
 
+
+.menu {
+  position: absolute;
+  margin: -840px auto;
+  border: 1px solid black;
+  border-radius: 15px;
+  color: white;
+  padding: 10px 10px 10px 25px;
 }
+
+
+.box:hover::before{
+  position: absolute;
+  border: 1px solid black;
+  padding: 5px;
+  width:50px;
+  height:20px;
+  background-color:white;
+  color:black;
+  content: attr(data-content);
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+/*------------------------
+    MENU LATERAL
+--------------------------*/
+.filtros,
+.formas {
+  border: 1px solid black;
+  border-radius: 15px;
+  position: absolute;
+  background-color: #7F8C8D;
+  padding: 10px 10px 10px 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.filtros{
+  margin: -750px 0px 0px -120px;
+}
+
+.formas{
+  margin: -300px 0px 0px -120px;
+}
+
+.formas > h3,
+.filtros > h3 {
+  margin-left: -10px;
+}
+
+.canvas {
+  border-radius: 25px;
+}
+
+
+#pBinary {
+  visibility: hidden;
+}
+
+
 
 
 /*------------------------
-Filtros
+HOVER sobre iconos
 --------------------------*/
 
-#brightness {
-  background-image: url("../ico/brightness.jpg");
+.leftMenu:hover::before{
+  border: 1px solid black;
+  margin-left: 25px;
+  margin-top:15px;
+  padding: 5px;
+  width:150px;
+  height:50px;
+  background-color:white;
+  color:black;
+  content: attr(data-content);
+  opacity: 1;
+  visibility: visible;
 }
 
-#sharpness {
-  background-image: url("../ico/sharpness.jpg");
+button {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(138, 85, 85);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
 }
 
-#saturation {
-  background-image: url("../ico/saturation.jpg");
-}
 
-#crop {
-  background-image: url("../ico/crop.jpg");
-}
 
-#adjust {
-  background-image: url("../ico/adjust.jpg");
-}
 
-#shadows {
-  background-image: url("../ico/shadow.jpg");
-}
 
-#highlights {
-  background-image: url("../ico/highlights.jpg");
-}
+/*------------------------
+IMAGENES PARA LOS ICONOS
+/*------------------------
 
-#warmth {
-  background-image: url("../ico/warmth.jpg");
-}
+/*------------------------
+MENU SUPERIOR
+--------------------------*/
 
-#vignette {
-  background-image: url("../ico/vignette.jpg");
-}
+#pen {  background-image: url("../ico/supPen.png");}
+
+#brush {  background-image: url("../ico/supBrush.png");}
+
+#eraser { background-image: url("../ico/supEraser.png");}
+
+#save { background-image: url("../ico/supDisquette.png");}
+
+#clear { background-image: url("../ico/supClear.png");}
+
+/*------------------------
+FILTROS
+--------------------------*/
+
+
+#sepia {  background-image: url("../ico/filterSepia.png");}
+
+#negativo { background-image: url("../ico/filterNegative.png");}
+
+#binary { background-image: url("../ico/filterBinarizacion.png");}
+
+/*------------*/
+
+#brightness { background-image: url("../ico/brightness.jpg");}
+
+#sharpness {  background-image: url("../ico/sharpness.jpg");}
+
+#saturation { background-image: url("../ico/saturation.jpg");}
+
+#crop { background-image: url("../ico/crop.jpg");}
+
+#adjust { background-image: url("../ico/adjust.jpg");}
+
+#shadows {  background-image: url("../ico/shadow.jpg");}
+
+#highlights { background-image: url("../ico/highlights.jpg");}
+
+#warmth { background-image: url("../ico/warmth.jpg");}
+
+
+/*------------------------
+FORMAS
+--------------------------*/
+
+#circle { background-image: url("../ico/formCircle.png");}
+
+#rectangle {  background-image: url("../ico/formRectangle.png");}
+
+#triangle { background-image: url("../ico/formTriangle.png");}
+
+
+
+
+

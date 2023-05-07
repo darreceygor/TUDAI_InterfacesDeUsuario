@@ -8,26 +8,56 @@
   <title>Trabajo Practico # 2</title>
 </head>
 <body onload="main()">
-  <canvas id="canvas" width="500px" height="500px" >
+  <div class="container">
+    <canvas id="canvas" class="canvas" width="750px" height="750px" >
 
-  </canvas>
-  <br>
-  <button id="pen" value="Lapiz"></button>
-  <button id="eraser" value="Goma de borrar"></button>
-  <button id="save" value="Guardar"></button>
+    </canvas>
+    <section class="menu">
+      <input type="file" id="file" value="Cargar"></input>
+      <button id="pen" value="Lapiz" class="box" data-content="Lápiz"></button>
+      <button id="brush" value="Pencil" class="box" data-content="Pincel"></button>
+      <button id="eraser" value="Goma de borrar" class="box" data-content="Goma"></button>
+      <button id="save" value="Guardar" class="box" data-content="Guardar"></button>
+      <button id="clear" value="Limpiar" class="box" data-content="Vaciar"></button>
+      
+      <br>
+    
+    </section>
 
-  <h2>Filtros</h2>
-  <button id="brightness"></button>
-  <button id="sharpness"></button>
-  <button id="saturation"></button>
-  <button id="crop"></button>
-  <button id="adjust"></button>
-  <button id="shadows"></button>
-  <button id="vignette"></button>
-  <button id="warmth"></button>
-  <button id="highlights"></button>
+    <section class="filtros">
+      <h3>Figuras</h3>
+      <button id="sepia" class="leftMenu" data-content="Sepia"></button>
+      <button id="negativo" class="leftMenu" data-content="Negativo"> </button>
+      <button id="binary" class="leftMenu" data-content="Binarizacion"></button>
 
+      <button id="saturation" class="leftMenu" data-content="Saturación"></button>
+      <br>
+      <button id="brightness" class="leftMenu" data-content="Brillo"></button>
+      <button id="sharpness" class="leftMenu" data-content="Nitidez"></button>
+      <button id="crop" class="leftMenu" data-content="Recorte"></button>
+      <button id="adjust" class="leftMenu" data-content="Ajuste"></button>
+      </section>    
+      <p id="pBinary">
+        <input id="inputBinary" type="range" min="0" max="255" autocomplete="off" enabled>
+      </p>
+
+    <section class="formas">
+      <h3>Formas</h3>
+      <button id="circle" class="leftMenu" data-content="Circulo"></button>
+      <button id="rectangle" class="leftMenu" data-content="Rectangulo"></button>
+      <button id="triangle" class="leftMenu" data-content="Triangulo"></button>
+
+    </section>
+  </div>
+
+  
   <script src="js/Pen.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/Filters/Filter.js"></script>
+  <script src="js/Filters/Negativo.js"></script>
+  <script src="js/Filters/Sepia.js"></script>
+  <script src="js/Filters/Binarizacion.js"></script>
+  <script src="js/Filters/Saturacion.js"></script>
+
 </body>
 </html>
