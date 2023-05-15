@@ -13,49 +13,50 @@
 
     </canvas>
     <section class="menu">
-      <input type="file" id="file" value="Cargar"></input>
+      <input type="file" id="file" value="Cargar"  data-content="Color"></input>
       <button id="pen" value="Lapiz" class="box" data-content="Lápiz"></button>
       <button id="brush" value="Pencil" class="box" data-content="Pincel"></button>
         <input id="inputPB" type="range" value="5" min="1" max="10" autocomplete="off" enabled>
         <span id="pb">5</span>
         <input type="color" name="inputColor" id="inputColor" value="#FFF">
       <br>
-      <button id="eraser" value="Goma de borrar" class="box" data-content="Goma"></button>
-      <button id="save" value="Guardar" class="box" data-content="Guardar"></button>
-      <button id="clear" value="Limpiar" class="box" data-content="Vaciar"></button>
-      <button id="circle" class="box option" data-content="Circulo"></button>
-      <button id="rectangle" class="box option" data-content="Rectangulo"></button>
-      <button id="triangle" class="box option" data-content="Triangulo"></button>
+      <div class="subMenu">
+        <button id="eraser" value="Goma de borrar" class="box" data-content="Goma"></button>
+        <button id="save" value="Guardar" class="box" data-content="Guardar"></button>
+        <button id="clear" value="Limpiar" class="box" data-content="Vaciar"></button>
+      </div>
       <br>
     
     </section>
 
     <section class="filtros">
-      <h3>Figuras</h3>
+      <h3>Filtros</h3>
       <button id="sepia" class="leftMenu" data-content="Sepia"></button>
       <button id="negativo" class="leftMenu" data-content="Negativo"> </button>
+      
       <button id="binary" class="leftMenu" data-content="Binarizacion"></button>
       <p id="pBinary">
-        <input id="inputBinary" type="range" min="0" max="255" autocomplete="off" enabled>
-        <span id="bin">128</span>
-      </p>
-        <button id="contrast" class="leftMenu" data-content="Contraste"></button>   
-       <p id="pConstrast">  
-        <input id="inputContrast" type="range" min="0" max="255" autocomplete="off" enabled>
-        <span id="cntrt">128</span>
+        <input id="inputBinary" type="range" min="-100" max="100" autocomplete="off" enabled>
+        <span id="bin">0</span>
       </p>
 
       <button id="brightness" class="leftMenu" data-content="Brillo"></button>
       <p id="pBright">  
-        <input id="inputBright" type="range" min="0" max="128" autocomplete="off" enabled>
-        <span id="brgh">64</span>
+        <input id="inputBright" type="range" min="-100" max="100" autocomplete="off" enabled>
+        <span id="brgh">0</span>
       </p>
-      <br>
-      <button id="saturation" class="leftMenu" data-content="Saturación"></button>
-      <button id="sharpness" class="leftMenu" data-content="Nitidez"></button>
-      <button id="crop" class="leftMenu" data-content="Recorte"></button>
-  
 
+      <button id="blur" class="leftMenu" data-content="Blur"></button>
+      <p id="pBlur">  
+        <input id="inputBlur" type="range" min="-100" max="100" autocomplete="off" enabled>
+        <span id="blu">0</span>
+      </p>
+
+      <button id="saturation" class="leftMenu" data-content="Saturación"></button>
+      <p id="pSaturation">  
+        <input id="inputSaturation" type="range" min="-100" max="100" autocomplete="off" enabled>
+        <span id="sat">0</span>
+      </p>
 
   </div>
 
@@ -66,10 +67,10 @@
   <script src="js/Filters/Negativo.js"></script>
   <script src="js/Filters/Sepia.js"></script>
   <script src="js/Filters/Binarizacion.js"></script>
-  <script src="js/Filters/Saturacion.js"></script>
   <script src="js/Filters/Contraste.js"></script>
   <script src="js/Filters/Brillo.js"></script>
   <script src="js/Formas.js"></script>
+
 
 </body>
 </html>
